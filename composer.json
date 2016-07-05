@@ -24,7 +24,9 @@
         "symfony/assetic-bundle": "^2.8",
 
         "twitter/bootstrap": "3.*",
-        "components/jquery": "1.11.1"
+        "components/jquery": "1.11.1",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "doctrine/doctrine-migrations-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
