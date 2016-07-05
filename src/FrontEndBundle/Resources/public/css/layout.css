@@ -1,0 +1,52 @@
+.header {
+
+}
+
+.menu-list {
+    height: 25px;
+    width: 100%;
+    background-color: #148CE8;
+}
+
+.menu-list > ul > li {
+    display: inline;
+    list-style: none;
+}
+
+.menu-list > ul > li a {
+    color: white;
+    vertical-align: middle;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+}
+
+.content .left-content {
+    width: 25%;
+    max-height: 100%;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+.left-content > ul > li {
+    list-style: none;
+}
+
+.content .right-content {
+    width: 65%;
+    max-height: 100%;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer {
+    background-color: #148ce8;
+    color: white;
+    height: 25px;
+    text-align: center;
+    width: 100%;
+}
+

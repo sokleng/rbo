@@ -1,0 +1,64 @@
+{# app/Resources/views/base.html.twig #}
+{% extends '::base.html.twig' %}
+
+{# block style #}
+{% block stylesheets %}
+
+    {% stylesheets
+        '@common_css'
+        '@FrontEndBundle/Resources/public/css/layout.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+
+    {% endstylesheets %}
+
+{% endblock %}
+
+{# block body #}
+{% block body %}
+    <div class="header">
+        <div class="logo">
+            {% image '@FrontEndBundle/Resources/public/images/logo.png' %}
+                <img src="{{ asset_url }}" alt="Logo" />
+            {% endimage %}
+        </div>
+    </div>
+    <div class="menu-list">
+        {% block menulist %}
+
+        {% endblock %}
+    </div>
+    <div class="content">
+        <div class="left-content">
+            <ul>
+                <li><a>Khmer book</a></li>
+                <li><a>English book</a></li>
+                <li><a>Khmer book</a></li>
+                <li><a>English book</a></li>
+                <li><a>Khmer book</a></li>
+                <li><a>English book</a></li>
+                <li><a>Khmer book</a></li>
+                <li><a>English book</a></li>
+            </ul>
+        </div>
+        <div class="right-content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+    <div class="footer">
+        <span>&copy;copy right by sokleng oum 2016.</span>
+    </div>
+{% endblock %}
+
+{# block javascript #}
+{% block javascripts %}
+    {% javascripts
+        '@jquery_js'
+        '@bootstrap_js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+

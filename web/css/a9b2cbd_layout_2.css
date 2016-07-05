@@ -1,0 +1,42 @@
+.label-login {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.label-login > a {
+    padding-right: 10px;
+}
+
+.menu-list {
+    height: 25px;
+    width: 100%;
+    background-color: #144793;
+}
+
+.menu-list ul li {
+    color: white;
+    display: inline;
+    list-style: outside none none;
+}
+
+.menu-list ul li a {
+    color: white;
+    vertical-align: middle;
+}
+
+
+.content {
+    border: 1px solid;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+.footer {
+    background-color: #144793;
+    color: white;
+    height: 25px;
+    text-align: center;
+    width: 100%;
+}

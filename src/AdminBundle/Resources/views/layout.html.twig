@@ -1,0 +1,70 @@
+{# app/Resources/views/base.html.twig #}
+{% extends '::base.html.twig' %}
+
+{# block style #}
+{% block stylesheets %}
+
+    {% stylesheets
+        '@common_css'
+        '@AdminBundle/Resources/public/css/layout.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+
+    {% endstylesheets %}
+
+{% endblock %}
+
+{# block body #}
+{% block body %}
+    <div class="header">
+        <div class="logo">
+            {% image '@AdminBundle/Resources/public/images/logo.png' %}
+                <img src="{{ asset_url }}" alt="Logo" />
+            {% endimage %}
+        </div>
+        <div class="label-login">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a
+                    href="{{ path('fos_user_security_login') }}"
+                >
+                    {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% endif %}
+          {#   <a href="{{path('grps_locale', {'locale': 'en_US'})}}">
+                {{ ('grps.main.layout.language.english') | trans }}
+            </a>|
+            <a href="{{path('grps_locale', {'locale': 'zh_CN'})}}">
+                {{ ('grps.main.layout.language.chinese') | trans }}
+            </a> #}
+        </div>
+    </div>
+    <div class="menu-list">
+        {% block menulist %}
+
+        {% endblock %}
+    </div>
+    <div class="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <span>&copy;copy right by sokleng oum 2016.</span>
+    </div>
+{% endblock %}
+
+{# block javascript #}
+{% block javascripts %}
+    {% javascripts
+        '@jquery_js'
+        '@bootstrap_js'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
